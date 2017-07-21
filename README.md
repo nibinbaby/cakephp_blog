@@ -49,3 +49,23 @@ configuration relevant for your application.
 The app skeleton uses a subset of [Foundation](http://foundation.zurb.com/) CSS
 framework by default. You can, however, replace it with any other library or
 custom styles.
+
+
+## Database querires
+
+/* First, create our articles table: */
+CREATE TABLE articles (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(50),
+    body TEXT,
+    created DATETIME DEFAULT NULL,
+    modified DATETIME DEFAULT NULL
+);
+
+/* Then insert some articles for testing: */
+INSERT INTO articles (title,body,created)
+    VALUES ('The title', 'This is the article body.', NOW());
+INSERT INTO articles (title,body,created)
+    VALUES ('A title once again', 'And the article body follows.', NOW());
+INSERT INTO articles (title,body,created)
+    VALUES ('Title strikes back', 'This is really exciting! Not.', NOW());
